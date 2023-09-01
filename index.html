@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landing</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+
+    <style>
+       /* .header {
+            background-color: #f8f9fa;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        } */
+        
+        p , h3,.d-flex a, .nav-link , h4,.price-list li ,.form-group label{
+            color: var(--contents-color);
+        }
+        h2, .cart-title, .text-muted{
+            color: var(--heading-color) !important;
+            font-weight: 700;
+        }
+        section{
+            background: var(--background-color);
+        }
+        
+        .vr-bg{
+            background: var(--banner-background) ;
+            background-image: url("images/vr-section.png");
+            background-position: center;
+            background-size: 100%;
+        } 
+        .xbos-ps{
+            background: var(--banner-background) url("images/rules.png");
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        .nav-link {
+            font-weight: 500;
+        }
+        .menu {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-item {
+            margin-right: 20px;
+        }
+        .row {
+            align-items: center;
+        }       
+        .responsive-img img {
+            max-width: 100%;
+            height: auto;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li{
+            display: flex;
+
+        }
+        .price-list li::before {
+            content: url('images/Vector.png');
+            padding-right: 1em;
+        }
+        .std-clr li::before {
+            content: url('images/price-check.png') !important;
+            padding-right: 1em;
+        }
+        .footer-sec{
+             border: 1.5px solid #816F8C;
+             padding: 1.5em;
+             background: #FCD8CB;
+
+        }
+        button{
+            background: linear-gradient(92.81deg, #4499D9 11.62%, #6E6CC1 75.39%);
+            border-radius: 25px !important;
+        }
+        .footer-logo{
+            width:140px;
+        }
+        .card{
+            background: var(--card-color);
+            box-shadow: 0px 20px 50px 0px #8494CD14;
+            padding: 1em 0;
+            margin: 1em 0;
+            border-radius: 20px;
+            border:none;
+        }
+        .card-header, .card-footer, .card-body{
+            border: none;
+            background-color: transparent;
+            text-align: initial;
+        }
+        .card-std{
+            background:
+                /* url("images/Union.png") left bottom no-repeat fixed, */
+                linear-gradient(180deg, #09143C, #446381 0%, #826F8C 100%);
+            background-size: cover;
+        }
+        /* .card-footer{
+            background: url("images/Union.png") left bottom no-repeat fixed; 
+            background-size: cover;
+        } */
+        .std-clr li{
+            color: #fff;
+        }
+        /* .std-head h2::after{
+            content: url(images/price-check.png);
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        } */
+        .active-badge {
+            position: absolute;
+            right: 0;
+            top: 0;
+            
+        }
+        .mask-t {
+            color: #fff;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            right: 0px;
+            top: 0px;
+        }
+        .modal-dialog{
+            max-width: none;
+            margin: 28px;
+        }
+        .modal-content{
+            /* height: 90vh; */
+            overflow-y: auto;
+            max-height: calc(100vh - 60px);
+        }
+        .modal-header{
+            background-color: var(--form-bg);
+        }
+        .btn-close{
+            background: #fff var(--bs-btn-close-bg) center/1em auto no-repeat;
+           --bs-btn-close-opacity: 1;
+        }
+        .form-dtl, .form-group .radio-inline {
+            color: #000;
+        }
+        .form-group{
+            margin-bottom: 2em;
+        }
+        .form-group label{
+            font-weight: 500;
+            font-size: 18px;
+        }
+        .form-control{
+            border-radius: 0px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+        .required-label::after {
+            content: ' *'; 
+            color: red; 
+        }
+        .form-control::placeholder {
+            color: #999; /* You can replace this with your desired color */
+        }
+        .text{
+            text-align: justify;
+        }
+        #Prices p{
+            font-size: 23px;
+            padding-top: 1em;
+        }
+        .pd-tb{
+            padding: 3em 0;
+        }
+        .radio-inline {
+            margin-right: 1em;
+        }
+        @media(min-width: 767px){
+            
+            .pl-sz {
+                font-size: 2.5rem;
+            }
+            .price-list{
+                line-height: 40px;
+            }
+            .card-std{
+                line-height: 60px;
+            }
+            .social-icons{
+                width: 8%;
+            }
+            small{
+                font-size: 18px;
+            }
+            .top-bg{
+                 background: var(--banner-background) url("images/banner-full.png");
+            }
+        }
+        @media(max-width: 767px){
+            .flex-rev{
+                flex-direction: column-reverse;
+            }
+            .footer-logo {
+                width: 100px;
+            }
+            .copyright p{
+                font-size: 9px;
+            }
+            .footer-icons a{
+                padding-right: 6px;
+            }  
+            .price-list{
+                line-height: 45px;
+            } 
+            .mob-none{
+                display: none;
+            } 
+            .logo{
+                width: 150px;
+            }
+            .top-bg{
+                background: var(--banner-background) url("images/banner-bg.png");
+            }
+        }
+        @media (min-width: 768px) and (max-width: 991px){
+            .footer-icons a{
+                padding-right: 0.75em;
+            }
+            small{
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body >
+    <header class="header top-bg " style=" padding: 20px 0;">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-2 logo">
+              <img src="images/Final logo 1 1.png" alt="Header Logo">
+            </div>
+            <div class="col-10 text-end">
+              <nav class="menu">
+                <ul class="nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#AboutUs">About Us</a>
+                  </li>                
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Rules">Prices</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#Rules">Rules</a>
+                  </li>
+                  <li class="nav-item">
+                    <button class=" btn btn-primary mobile-menu-button mob-none" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                        Get Started Now
+                      </button>
+                  </li>
+                </ul>
+              </nav>              
+            </div>
+          </div>
+        </div>       
+            <!--Main Section-->
+            <div id="Home" class="pd-tb" >
+                <div class="container">
+                    <div class="row flex-rev">
+                        <div class="col-md-6">
+                            <div class="content">
+                                <p>Gaming Consoles</p>
+                                <h2>Try It, Rent It,</h2>
+                                <h3>Save $50!</h3>
+                                    <p class="text">
+                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or- less normal distribution of letters as opposed
+                                    </p>
+                                    <button class=" btn btn-primary mobile-menu-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Get Started Now
+                                    </button>
+                            </div>         
+                        </div>
+                        <div class="col-md-6">
+                            <div class="img img-fluid responsive-img" >
+                                <img src="images/character.png" alt="Banner Image" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <main >
+        <article>
+            <!--About Section-->
+            <section id="AboutUs" class="vr-bg " >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="img img-fluid responsive-img" >
+                                <img src="images/illutration.png" alt="AboutUs Image" loading="lazy">
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="content">
+                                <h4>About VR Glasses</h3>
+                                <h2>The New VR Glasses</h2>
+                                <h2>Series</h2>
+                                <p class="text">
+                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or- less normal distribution of letters as opposed
+                                </p>
+                                <button class=" btn btn-primary mobile-menu-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Get Started Now
+                                </button>
+                            </div>         
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Xbos Section-->
+            <section  id="Rules" class="xbos-ps pd-tb">
+                <div class="container">
+                    <div class="row flex-rev">
+                        <div class="col-md-6">
+                            <div class="content">
+                                <p>About XBOX, PS</p>
+                                <h2>The New Xbox, Ps</h2>
+                                <h2>Series</h2>
+                                    <p class="text">
+                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or- less normal distribution of letters as opposed
+                                    </p>
+                                    <button class=" btn btn-primary mobile-menu-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Get Started Now
+                                    </button>
+                            </div>         
+                        </div>
+                        <div class="col-md-6">
+                            <div class="img img-fluid responsive-img" >
+                                <img src="images/img.png" alt="Xbox Image" loading="lazy">
+                            </div>
+                        </div>
+
+                    </div>
+               </div>
+            </section>
+            <!--Price Section-->
+            <section id="Prices">
+                <p class="text-center">Our Pricing</p>
+                <div class="text-center">
+                    <h2 class="pl-sz">Choose Your Plan</h2>
+                </div>
+                <div class="container" style="padding-bottom: 3em;">
+                    <div class="row text-center" style="align-items: center;">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 >
+                                        <strong>Basic</strong>
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+                                    <h2 class="card-title pricing-card-title mb-4">
+                                        &#36;50.00
+                                        <small class="text-muted">/ Per Hour</small>
+                                    </h2>
+                                    <ul class="price-list">
+                                        <li>10 users included</li>
+                                        <li>2GB of storage</li>
+                                        <li>Email support</li>
+                                        <li>Help center access</li>
+                                        <li>10 users included</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer">
+                                    <button class=" btn btn-primary mobile-menu-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Select This Plan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="card card-std" >
+                                <div class="card-header std-head">
+                                    
+                                    <!-- <div class="active-badge">
+                                    </div>
+                                    <div class="mask-t">
+                                        <i class="bi bi-check"></i>
+                                    </div> -->
+                                    <h4 style="color: #FFF;">
+                                        <strong>Standard</strong>
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+                                    <h2 class="card-title pricing-card-title mb-4">
+                                        &#36;95.00
+                                        <small class="text-muted">/ Per Hour</small>
+                                    </h2>
+                                    <ul class="price-list std-clr">
+                                        <li>10 users included</li>
+                                        <li>2GB of storage</li>
+                                        <li>Email support</li>
+                                        <li>Help center access</li>
+                                        <li>10 users included</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer">
+                                    <button class=" btn btn-primary mobile-menu-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Select This Plan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 >
+                                        <strong>Premium</strong>
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+                                    <h2 class="card-title pricing-card-title mb-4">
+                                        &#36;120.00
+                                        <small class="text-muted">/ Per Hour</small>
+                                    </h2>
+                                    <ul class="price-list">
+                                        <li>10 users included</li>
+                                        <li>2GB of storage</li>
+                                        <li>Email support</li>
+                                        <li>Help center access</li>
+                                        <li>10 users included</li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer">
+                                    <button class=" btn btn-primary mobile-menu-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Select This Plan
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <!--Footer Section-->
+    <footer class="footer-sec">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="logo footer-logo">
+                  <img src="images/Final logo 1 1.png" alt="Logo" class="img-fluid">
+                </div>
+                <div class="copyright text-center ">
+                    <p style="margin-bottom: 0;"> Copyright  &copy; 2022 HEALAS.LT. All Rights Reserved.</p>
+                </div>
+                <div class="social-icons d-flex">
+                    <div class="d-flex footer-icons" style="width: 100%;justify-content: space-between;">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    </div>                  
+                </div>
+            </div>
+    </footer>
+    <!-- Notification -->
+    <div id="toast-notification" class="toast-notification"></div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="color:#fff">Get a Quote</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="onFormSubmit(this,event)">
+                    <div class="row">
+                         <div class="col-md-6">
+                            <div class="section">
+                             <h3 class="section-title form-dtl">Contact Details</h2>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="name" class="required-label">Name</label>
+                                            <input name="name" type="text" class="form-control" id="name" placeholder="Name" required pattern="[A-Za-z\s]+">
+                                        </div>                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="company">Company Name</label>
+                                            <input name="company_name" type="text" class="form-control" id="company" placeholder="Company Name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="email" class="required-label">Email</label>
+                                            <input name="email" type="email" class="form-control" id="email" placeholder="Email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="phone" class="required-label">Phone</label>
+                                            <input name="phone" type="tel" class="form-control" id="phone" placeholder="Phone" required pattern="[0-9]{10}">
+                                        </div>                                        
+                                    </div>
+                                </div>
+                                <h3 class="section-title form-dtl">Project Details</h2>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="website">Website (If Applicable)</label>
+                                            <input name="website" type="text" class="form-control" id="website" placeholder="website">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="budget" class="required-label">Do You Have A Budget In Mind?</label>
+                                            <input type="text" name="budget" class="form-control" id="budget" placeholder="Do you have a budget" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label style="text-transform: capitalize;">How soon are you ready to start?</label><br>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="how_soon" value="immediately" checked>&nbsp;&nbsp;Immediately
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="how_soon" value="1-2weeks">&nbsp;&nbsp;
+                                                1-2 weeks
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="how_soon" value="2-4weeks">&nbsp;&nbsp;
+                                                2-4 weeks
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio"name="how_soon" value="4-8weeks">&nbsp;&nbsp;
+                                                4-8 weeks
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="how_soon" value="8+weeks">&nbsp;&nbsp;
+                                                8+ weeks
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                        <div class="col-md-6">
+                            <div class="section">
+                              <h3 class="section-title form-dtl required-label">Service Details</h2>
+                                <div class="row">
+                                     <div class="col-6">
+                                        <input name="service" type="checkbox" class="custom-checkbox form-group" id="cloudHosting" value="Cloud Hosting">
+                                        <label class="custom-checkbox-label" for="cloudHosting">
+                                            <div class="custom-checkbox-icon">
+                                                <i class="fas fa-cloud"></i>
+                                            </div>
+                                            <div class="custom-checkbox-label-text">Cloud Hosting</div>
+                                        </label>
+                                     </div>
+                                     <div class="col-6">
+                                        <input name="service" type="checkbox" class="custom-checkbox form-group" id="designDevelopment" value="Design and Development">
+                                        <label class="custom-checkbox-label" for="designDevelopment">
+                                            <div class="custom-checkbox-icon">
+                                                <i class="fas fa-paint-brush"></i>
+                                            </div>
+                                            <div class="custom-checkbox-label-text">Design and Development</div>
+                                        </label>
+                                     </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input name="service" type="checkbox" class="custom-checkbox form-group" id="businessMarketing" value="Business Marketing">
+                                        <label class="custom-checkbox-label" for="businessMarketing">
+                                            <div class="custom-checkbox-icon">
+                                                 <i class="fas fa-briefcase"></i>
+                                            </div>
+                                            <div class="custom-checkbox-label-text">Business Marketing</div>
+                                        </label>
+                                    </div>
+                                    <div class="col-6">
+                                        <input name="service" type="checkbox" class="custom-checkbox form-group" id="digitalMarketing" value="Digital Marketing">
+                                        <label class="custom-checkbox-label" for="digitalMarketing">
+                                            <div class="custom-checkbox-icon">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <div class="custom-checkbox-label-text">Digital Marketing</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                 <h3 class="section-title form-dtl required-label">Please select your preferred contact method</h2>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input name="contact_method" type="radio" class="custom-checkbox" id="contactMethodCall" value="1">
+                                        <label class="custom-checkbox-label" for="contactMethodCall">
+                                            <div class="custom-checkbox-icon">
+                                                <i class="fas fa-phone"></i>
+                                            </div>
+                                            <div class="custom-checkbox-label-text">Call</div>
+                                        </label>
+                                    </div>
+                                    <div class="col-6">
+                                        <input name="contact_method" type="radio" class="custom-checkbox" id="contactMethodEmail" value="2">
+                                        <label class="custom-checkbox-label" for="contactMethodEmail">
+                                            <div class="custom-checkbox-icon">
+                                                <i class="fas fa-envelope"></i>
+                                            </div>
+                                            <div class="custom-checkbox-label-text">Email</div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="project-overview">
+                                    <textarea name="quick_over_view" id="projectOverview" placeholder="Quick overview of your project" style="width: 100%;" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>           
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+ @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Josefin+Sans:wght@400;500&display=swap');
+:root{
+    
+    --content-color: #6d597a;
+    --text-color: #355070;
+    --bg-color-2: #e26c86;
+    --contents-color: #446381;
+    --background-color: #FCD8CB;
+    --banner-background: #FFD9C3;
+    --heading-color:#EB8382;
+    --card-color:#FBDACF;
+    --form-bg:#09143C;
+}
+body,html,h4,h3,h2,p{
+  font-family: 'Josefin Sans', sans-serif ;
+}
+button, form, div, .price-list li {
+   font-family: inherit;
+}
+.custom-checkbox {
+  display: none;
+}
+
+.custom-checkbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-checkbox-icon {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-checkbox-label-text {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Highlight the label when checked */
+.custom-checkbox:checked + .custom-checkbox-label {
+  background-color: #f0f0f0;
+  border-color: #999;
+}
+
+#projectOverview {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+body::-webkit-scrollbar, .modal-content::-webkit-scrollbar{
+  display: none;
+}
+
+/* .notification-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+  padding: 10px;
+  margin-top: 10px;
+} */
+.notification-success {
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
+  color: red; /* Set the text color to red */
+  font-size: 18px; /* Set the font size to your desired value */
+  text-align: center;
+}
+.toast-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: none;
+  z-index: 9999;
+}
